@@ -12,6 +12,7 @@ function docker_prune() {
 		if [[ "$option" == "system" ]]; then
 			echo "running prune:"
 			echo "docker $option prune -f $commands"
+			docker $option prune -f $commands
 			echo
 		else
 			echo "WARN: the --volumes command is only allowed with system option"
@@ -26,6 +27,7 @@ function docker_prune() {
 		if [[ "$option" == "system" ]] || [[ "$option" == "image" ]]; then
 			echo "running prune: "
 			echo "docker $option prune -f $commands"
+			docker $option prune -f $commands
 			echo 
 		else
 			echo "WARN: the --all & -a commands are only allowed with system or image options"
@@ -44,6 +46,7 @@ function docker_prune() {
 	else
 		echo "running prune:"
 		echo "docker $option prune -f $commands"
+		docker $option prune -f $commands
 		echo 
 	fi
 }
