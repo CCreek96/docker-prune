@@ -23,7 +23,7 @@ docker run -d \
 ```
 
 ### Docker compose
-To use docker-prune with docker-compose, you can use something similar to
+To use docker-prune with docker compose, you can use something similar to
 
 ```
 version: '3'
@@ -57,7 +57,8 @@ The commands are used to control which items from an option should be removed. S
 
 The available commands are:
 
-| Commands                       | Meaning                                                                         |                    |:------------------------------:|---------------------------------------------------------------------------------|
+| Commands                       | Meaning                                                                         |
+|:------------------------------:|---------------------------------------------------------------------------------|
 | `--filter "until=<timestamp>"` | only prune if created *before* the given timestamp                              |
 | `--filter "label=<key>"`       | only prune if they have the specified label                                     |
 | `--all, -a`                    | prune all items rather than just dangling (only for system and image options)   |
