@@ -46,7 +46,7 @@ Options are used to specify what type of items should be removed. Multiple optio
 The available options are:
 
 | Options   | Meaning                                                     |
-|:---------:|:------------------------------------------------------------|
+|:---------:|-------------------------------------------------------------|
 | `system`  | remove dangling containers, networks, and images (default)  |
 | `image`   | remove unused images                                        |
 | `network` | remove unused networks                                      |
@@ -57,7 +57,7 @@ The commands are used to control which items from an option should be removed. S
 
 The available commands are:
 
-| Commands                       | Meaning                                                                         |                    |:------------------------------:|:--------------------------------------------------------------------------------|
+| Commands                       | Meaning                                                                         |                    |:------------------------------:|---------------------------------------------------------------------------------|
 | `--filter "until=<timestamp>"` | only prune if created *before* the given timestamp                              |
 | `--filter "label=<key>"`       | only prune if they have the specified label                                     |
 | `--all, -a`                    | prune all items rather than just dangling (only for system and image options)   |
@@ -66,6 +66,9 @@ The available commands are:
 
 ## Related Docker Documentation
 [Docker system prune](https://docs.docker.com/engine/reference/commandline/system_prune/) 
+
 [Docker image prune](https://docs.docker.com/engine/reference/commandline/image_prune/)
+
 [Docker network prune](https://docs.docker.com/engine/reference/commandline/network_prune/)
+
 [Docker volume prune](https://docs.docker.com/engine/reference/commandline/volume_prune/)
