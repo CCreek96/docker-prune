@@ -11,14 +11,11 @@ function docker_prune() {
 		if [[ "$option" == "system" ]]; then
 			echo "running prune: docker $option prune -f $commands"
 			docker $option prune -f $commands
-			#echo 
 		else
 			echo "WARN: the --volumes command is only allowed with system option"
 			echo "removing the offending command and retrying"
-			#echo "old commands: $commands"
 			commands="${commands/" --volumes"/""}"
 			echo "new commands: $commands"
-			echo
 			docker_prune "$option" "$commands"
 		fi
 	# Ensure all command is only passed to system option
@@ -26,11 +23,9 @@ function docker_prune() {
 		if [[ "$option" == "system" ]] || [[ "$option" == "image" ]]; then
 			echo "running prune: docker $option prune -f $commands"
 			docker $option prune -f $commands
-			#echo 
 		else
 			echo "WARN: the --all & -a commands are only allowed with system or image options"
 			echo "removing the offending command and retrying"
-			#echo "old commands: $commands"
 			if [[ "$commands" =~ "--all" ]]; then
 				commands="${commands/" --all"/""}"
 			fi
@@ -38,14 +33,12 @@ function docker_prune() {
 				commands="${commands/" -a"/""}"
 			fi
 			echo "new commands: $commands"
-			echo 
 			docker_prune "$option" "$commands"
 		fi
 	# allow other commands to run
 	else
 		echo "running prune: docker $option prune -f $commands"
 		docker $option prune -f $commands
-		#echo 
 	fi
 }
 
